@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Kalkulator</title>
+    <script language = "Javascript" type="text/javascript">
+        //kondisi pemilihan fungsi aritmatika
+		function opsi(a){
+			switch(a){
+				case 1: jumlah(); break;
+				case 2: kurang(); break;
+				case 3: kali(); break;
+				case 4: bagi(); break;
+			}
+
+		}
+		//kondisi pengecekan apabila user tidak menginputkan bilangan atau nol
+		function kondisi(x,y){
+			if(!x && !y){
+				alert("Harap masukan bilangan");
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		//kondisi pengecekan apabila user tidak menginputkan bilangan kedua, berlaku untuk pembagian
+		function kondisi2(y){
+			if(!y){
+				alert("bilangan kedua harus diisi atau tidak boleh sama dengan nol!");
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+		//fungsi penjumlahan
+		function jumlah(){
+			x= Number(document.kalkulator.bil1.value);//mengubah tipe data value bil 1 dari string menjadi integer dengan fungsi Number()
+			y= Number(document.kalkulator.bil2.value);//mengubah tipe data value bil 2 dari string menjadi integer dengan fungsi Number()
+			if(kondisi(x,y)){//mengecek kondisi apakah bilangan 1 dan 2 tidak sama dengan nol
+				z=x+y;//operasi penjumlahan
+				document.kalkulator.bil3.value=z;//mencetak value dari penjumlahan pada textbox bernama "bil3"
+			}
+		}
+		//fungsi pengurangan
+		function kurang(){
+			x= Number(document.kalkulator.bil1.value);//mengubah tipe data value bil 1 dari string menjadi integer dengan fungsi Number()
+			y= Number(document.kalkulator.bil2.value);//mengubah tipe data value bil 2 dari string menjadi integer dengan fungsi Number()
+			if(kondisi(x,y)){//mengecek kondisi apakah bilangan 1 dan 2 tidak sama dengan nol
+				z=x-y;//operasi pengurangan
+				document.kalkulator.bil3.value=z;//mencetak value dari penjumlahan pada textbox bernama "bil3"
+			}
+		}
+		//fungsi perkalian
+		function kali(){
+			x= Number(document.kalkulator.bil1.value);//mengubah tipe data value bil 1 dari string menjadi integer dengan fungsi Number()
+			y= Number(document.kalkulator.bil2.value);//mengubah tipe data value bil 2 dari string menjadi integer dengan fungsi Number()
+			if(kondisi(x,y)){//mengecek kondisi apakah bilangan 1 dan 2 tidak sama dengan nol
+				z=x*y;//operasi perkalian
+				document.kalkulator.bil3.value=z;//mencetak value dari penjumlahan pada textbox bernama "bil3"
+			}
+		}
+		//fungsi pembagian
+		function bagi(){
+			x= Number(document.kalkulator.bil1.value);//mengubah tipe data value bil 1 dari string menjadi integer dengan fungsi Number()
+			y= Number(document.kalkulator.bil2.value);//mengubah tipe data value bil 2 dari string menjadi integer dengan fungsi Number()
+			if(kondisi(x,y) && kondisi2(y)){//mengecek kondisi apakah bilangan 1 dan 2 tidak sama dengan nol dan apakah nilai 2 juga tidak sama dengan nol
+				z=x/y;//operasi pembagian
+				document.kalkulator.bil3.value=z;//mencetak value dari penjumlahan pada textbox bernama "bil3"
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2> Kalkulator Sederhana </h2><br>
+	<form name = "kalkulator" >
+	<table>
+		<tr>
+			<td>Bilangan 1</td>
+			<td> <input type="text" name="bil1"> </td>
+		</tr>
+		<tr>
+			<td>Bilangan 2</td>
+			<td> <input type="text" name="bil2"> </td>
+		</tr>
+		<tr>
+			<td>Hasil</td>
+			<td> <input type="text" name="bil3"> </td>
+		</tr>
+	</table><br>
+        <input type="button" value="+" onclick="javascript:opsi(1);">
+        <input type="button" value="-" onclick="javascript:opsi(2);">
+        <input type="button" value="X" onclick="javascript:opsi(3);">
+        <input type="button" value="/" onclick="javascript:opsi(4);">
+        <button type="reset">Clear</button></td>
+	</form>
+</body>
+</html>

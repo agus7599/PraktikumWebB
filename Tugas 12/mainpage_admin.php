@@ -1,0 +1,66 @@
+<?php
+    session_start();
+    if(empty($_SESSION['id'])){
+        header('location:login.php');
+    }
+    else if($_SESSION['tingkat']==1){
+        header('location:mainpage_user.php');
+    }
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home | Perpustakaan (Admin)</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="no-margin bgcl-lblue">
+        <table class="margin-center w-100 bgcl-white no-margin minheight-400" cellpadding="8">
+            <tr>
+                <td class="w-20 bgcl-lblue">
+                    <table class="w-100 bgcl-lblue">
+                        <tr>
+                            <td>
+                                <img src="foto/Logo.png" alt="foto profil" width="150" class="margin-block-center">
+                            </td>
+                        </tr>
+                    </table>
+                    <p><hr class="bdr-w-s-3"></p>
+                    <table class="bdr-collapse w-100 bgcl-lblue" cellpadding="8">
+                        <tr>
+                            <td class="fs-20 ff-arial">
+                                <ul>
+                                    <li><a href="Mainpage_admin.php">Home</a><hr></li>
+                                    <li><a href="#">Tentang Kami</a><hr></li>
+                                    <li><a href="#">Galeri Buku</a><hr></li>
+                                    <li><a href="#">Kontak</a><hr></li>
+                                    <li><a href="logout.php">Logout</a><hr></li>
+                                </ul>
+                            </td>
+                            <td class="padleft-30p va-top bgcl-white">
+                                <p class="fs-30 fw-bold alg-t-center ff-arial">
+                                    SELAMAT DATANG ADMIN PERPUSTAKAAN UNUD
+                                </p>
+                                <p class="fs-20 ff-arial">
+                                    Terima kasih atas kunjungan anda ke situs website perpustakaan Universitas Udayana. Silahkan kunjungi bagian masing - masing untuk mengetahui informasi lebih lanjut. 
+                                    Anda dapat mengunjungi bagian profil perpustakaan pada Tentang Kami, informasi buku pada Galeri 
+                                    Buku, dan informasi kontak pada bagian Kontak Kami
+                                </p>
+                                <p><hr></p><br><br>
+                                <h2 class="padleft-30p fw-bold bgcl-lblue cl-white ff-arial">Tentang Kami</h2>
+                                <p class="ff-arial">Berisi tentang profil dari perpustakaan Universitas Udayana</p>
+                                <hr>
+                                <h2 class="padleft-30p fw-bold bgcl-lblue cl-white ff-arial">Galeri Buku</h2>
+                                <p class="ff-arial">Berisi tentang buku yang terdapat pada perpustakaan</p>
+                                <hr>
+                                <h2 class="padleft-30p fw-bold bgcl-lblue cl-white ff-arial">Kontak</h2>
+                                <p class="ff-arial">Berisi tentang kontak pengurus perpustakaan dan pembuat website</p>
+                                <hr>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

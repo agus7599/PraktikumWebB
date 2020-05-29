@@ -1,0 +1,18 @@
+body{
+    background-color: white;
+}
+#menu ul {
+    background-color: darkblue;
+}
+#menu li a:hover {
+    color: darkblue;
+}
+#sidebar li a:hover{
+    background-color: darkblue;
+}
+.populer{
+    background-color: darkblue;
+}
+.button{
+    background-color: darkblue;
+}
